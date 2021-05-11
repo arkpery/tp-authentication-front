@@ -34,6 +34,31 @@ function start() {
     var role = null;
     var clones = [];
 
+    function transitionBegin(id){
+        var el = $(id + " .transition-element");
+        console.log("transition");
+        console.log(el);
+        if (el.length){
+            el.hide();
+        }
+        else {
+            $(id + " > main").hide();
+        }
+        $(id).addClass("d-none");
+    }
+
+    function transitionEnd(id){
+        $(id).removeClass("d-none");
+        var el = $(id + " .transition-element");
+        console.log(el);
+        if (el.length){
+            el.fadeIn(800);
+        }
+        else {
+            $(id + " > main").fadeIn(800);
+        }
+    }
+
     console.log("function trigger");
     function InitApp(components, role = null) {
         var location = (window.location.pathname || "/") + (window.location.hash || "#/");
@@ -46,8 +71,7 @@ function start() {
             var id = "#" + tmp.id;
             
             $(id + " *").off();
-            $(id + " > main").hide();
-            $(id).addClass("d-none");
+            transitionBegin(id);
         }
         for (var i = 0; i < components.length; i++) {
             var tmp = components[i];
@@ -58,13 +82,11 @@ function start() {
                 if (tmp.roles != null && tmp.roles.length > 0) {
                     if (tmp.roles.indexOf(role) > -1) {
                         component = tmp;
-                        $(id).removeClass("d-none");
-                        $(id + " > main").fadeIn(800);
+                        transitionEnd(id);
                     }
                 } else {
                     component = tmp;
-                    $(id).removeClass("d-none");
-                    $(id + " > main").fadeIn(800);
+                    transitionEnd(id);
                 }
             }
         }

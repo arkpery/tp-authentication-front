@@ -15,21 +15,63 @@
     <script src="/assets/scripts/mylib.js" type="text/javascript"></script>
     <title>TP Authentication</title>
 </head>
+<style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    .bg-apply-white {
+        background-color: white !important;
+    }
+
+    .bg-bg {
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%) !important;
+    }
+
+    .btn-entry {
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(96, 9, 121, 1) 35%, rgba(255, 0, 191, 1) 100%) !important;
+        border: none;
+    }
+
+    .title {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 4em;
+    }
+
+    .h-100-vh {
+        height: 100vh !important;
+        overflow: auto;
+    }
+
+    .error-message {
+        color:red;
+    }
+</style>
 
 <body class="d-none">
     <div id="signout">
         <script type="text/javascript" src="/assets/scripts/signout.js"></script>
     </div>
-    <div id="home">
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary text-white p-2">
-            <div class="container-fluid">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="navbar-item"><a class="nav-link active text-white" href="/#/">Home</a></li>
-                </ul>
+    <div id="home" class="bg-secondary bg-bg d-flex align-items-center h-100-vh justify-content-center">
+        <main class="container h-50">
+            <div class="p-4 m-4 w-100 h-50">
+                <div class="container shadow bg-primary bg-apply-white w-50 h-100 p-4">
+                    <div>
+                        <h1>Start using the app</h1>
+                    </div>
+                    <div>
+                        <p class="text">
+                            Lorem ipsum dolor...
+                        </p>
+                    </div>
+                    <div>
+                        <a href="/#/login"><button class="btn btn-primary btn-entry rounded-pill w-50">GO
+                                =></button></a>
+                    </div>
+                </div>
             </div>
-        </nav>
-        <main class="container col-md-6">
-            <h1>Home</h1>
         </main>
         <script type="text/javascript" src="/assets/scripts/home.js"></script>
     </div>
@@ -46,158 +88,153 @@
         </main>
         <script type="text/javascript" src="/assets/scripts/not_found.js"></script>
     </div>
-    <div id="register">
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary text-white p-2">
-            <div class="container-fluid">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="navbar-item"><a class="nav-link active text-white" href="/#/">Home</a></li>
-                    <li class="navbar-item"><a class="nav-link active text-white" href="/#/login">Se connecter</a></li>
-                </ul>
-            </div>
-        </nav>
-        <main class="container col-md-6">
-            <div class="d-flex align-items-center p-3 my-3 bg-primary bg-gradient text-white rounded shadow-sm">
-                <div>
-                    <h1 class="h6 mb-0 text-white">Page d'enregistrement</h1>
+    <div id="register" class="bg-secondary bg-bg d-flex align-items-center justify-content-center h-100-vh">
+        <main class="container">
+            <div class="p-4 m-4 w-100">
+                <div class="container shadow bg-primary bg-apply-white w-50 p-4">
+                    <div class="mb-2">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <h1 class="h6 mb-0 "><a class="nav-link active" href="/#/register">Enregistrement</a>
+                                </h1>
+                            </li>
+                            <li class="nav-item">
+                                <h1 class="h6 mb-0"><a class="nav-link" href="/#/login">Connection</a></h1>
+                            </li>
+                        </ul>
+                    </div>
+                    <form>
+                        <div class="transition-element">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Adresse électronique</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="tata@toto.fr" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Mot de passe</label>
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="******" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Confirmation</label>
+                                <input type="password" class="form-control" id="confirmation" name="confirmation"
+                                    placeholder="******" />
+                            </div>
+                        </div>
+                        <div class="error-message">
+
+                        </div>
+                        <div class="input-group d-flex justify-content-center">
+                            <button id="register" class="btn btn-success rounded-pill w-50"
+                                type="button">Valider</button>
+                        </div>
+                        <p class="text-muted">Les administrateurs doivent s'enregistrer depuis le webservice POST
+                            /api/admin/register !</p>
+                    </form>
                 </div>
-            </div>
-            <div class="d-flex align-items-center bg-body p-6 my-6 rounded shadown-sm">
-                <form class="col-md-12">
-                    <div class="mb-3 form-floating">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="tata@toto.fr" />
-                        <label for="email" class="form-label">Adresse électronique</label>
-                    </div>
-                    <div class="mb-3 form-floating">
-                        <input type="password" class="form-control" id="password" name="password"
-                            placeholder="******" />
-                        <label for="password" class="form-label">Mot de passe</label>
-                    </div>
-                    <div class="input-group">
-                        <button id="register" class="btn btn-primary" type="button">S'enregistrer</button>
-                    </div>
-                </form>
             </div>
         </main>
         <script type="text/javascript" src="/assets/scripts/register.js"></script>
     </div>
-    <div id="connect">
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary text-white p-2">
-            <div class="container-fluid">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="navbar-item"><a class="nav-link active text-white" href="/#/">Home</a></li>
-                    <li class="navbar-item"><a class="nav-link active text-white" href="/#/register">S'enregistrer</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <main class="container col-md-6">
-            <div class="d-flex align-items-center p-3 my-3 bg-primary bg-gradient text-white rounded shadow-sm">
-                <div>
-                    <h1 class="h6 mb-0 text-white">Page de connexion</h1>
+    <div id="connect" class="bg-secondary bg-bg  d-flex align-items-center justify-content-center h-100-vh">
+        <main class="container">
+            <div class="p-4 m-4 w-100">
+                <div class="container shadow bg-primary bg-apply-white w-50 p-4">
+                    <div class="mb-2">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <h1 class="h6 mb-0 text-white"><a class="nav-link" href="/#/register">Enregistrement</a>
+                                </h1>
+                            </li>
+                            <li class="nav-item">
+                                <h1 class="h6 mb-0 text-white"><a class="nav-link active" href="/#/login">Connection</a>
+                                </h1>
+                            </li>
+                        </ul>
+                    </div>
+                    <form>
+                        <div class="transition-element">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Adresse électronique</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="tata@toto.fr" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Mot de passe</label>
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="******" />
+                            </div>
+                        </div>
+                        <div class="input-group d-flex justify-content-center">
+                            <button id="connect" class="btn btn-success rounded-pill w-50"
+                                type="button">Valider</button>
+                        </div>
+                    </form>
                 </div>
-            </div>
-            <div class="d-flex align-items-center bg-body p-6 my-6 rounded shadown-sm">
-                <form class="col-md-12">
-                    <div class="mb-3 form-floating">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="tata@toto.fr" />
-                        <label for="email" class="form-label">Adresse électronique</label>
-                    </div>
-                    <div class="mb-3 form-floating">
-                        <input type="password" class="form-control" id="password" name="password"
-                            placeholder="******" />
-                        <label for="password" class="form-label">Mot de passe</label>
-                    </div>
-                    <div class="input-group">
-                        <button id="connect" class="btn btn-primary" type="button">Connection</button>
-                    </div>
-                    <hr>
-                    <div>
-                        <a href="#"><span class="d-flex justify-content-end text-primary">Mot de passe oublié?</span><a>
-                    </div>
-                </form>
             </div>
         </main>
         <script type="text/javascript" src="/assets/scripts/login.js"></script>
     </div>
-    <div id="create_post">
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary text-white p-2">
-            <div class="container-fluid">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="navbar-item"><a class="nav-link active text-white" href="/#/">Home</a></li>
-                    <li class="navbar-item"><a class="nav-link active text-white" href="/#/admin/post">Liste des posts</a></li>
-                    <li class="navbar-item"><a id="deco" class="nav-link active text-white" href="/#/signout">Se
-                            déconnecter</a></li>
-                </ul>
-            </div>
-        </nav>
-        <main class="container col-md-6">
-            <div>
-                <div class="d-flex align-items-center p-3 my-3 bg-primary bg-gradient text-white rounded shadow-sm">
-                    <div>
-                        <h1 class="h6 mb-0 text-white">Créer un post</h1>
+    <div id="create_post" class="bg-secondary bg-bg w-100 h-100-vh d-flex align-items-center">
+        <main class="container w-50 h-50">
+            <div class="m-4 p-4 shadow bg-white">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="py-2">
+                            <h1 class="h6 mb-0 title">Créer un post</h1>
+                        </div>
+                        <a href="/#/admin/post" class="btn btn-primary">Retour</a>
                     </div>
-                </div>
-                <div class="d-flex align-items-center bg-body p-6 my-6 rounded shadown-sm">
-                    <form class="col-md-12">
-                        <div class="mb-3 form-floating">
-                            <input type="text" class="form-control" id="title" name="title" placeholder="..." />
-                            <label for="email" class="form-label">Titre</label>
-                        </div>
-                        <div class="mb-3 form-floating">
-                            <textarea id="content" class="form-control" name="content">
+                    <div class="card-body">
+                        <form class="col-md-12">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Titre</label>
+                                <input type="text" class="form-control" id="title" name="title" placeholder="..." />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contenu</label>
+                                <textarea id="content" class="form-control" name="content">
 
-                            </textarea>
-                            <label for="password" class="form-label">Contenu</label>
-                        </div>
-                        <div class="input-group">
-                            <button id="create" class="btn btn-primary" type="button">Valider</button>
-                        </div>
-                        <hr>
-                    </form>
+                                </textarea>
+                            </div>
+                            <div class="input-group">
+                                <button id="create" class="btn btn-success rounded-pill w-5" type="button">Valider</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </main>
         <script type="text/javascript" src="/assets/scripts/post/create.js"></script>
     </div>
-    <div id="post_list">
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary text-white p-2">
-            <div class="container-fluid">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="navbar-item"><a class="nav-link active text-white" href="/#/">Home</a></li>
-                    <li class="navbar-item"><a id="deco" class="nav-link active text-white" href="/#/signout">Se
-                            déconnecter</a></li>
-                </ul>
+    <div id="post_list" class="bg-secondary bg-bg w-100 h-100-vh d-flex justify-content-center">
+        <main class="container w-50">
+            <div class="p-4">
+                <h1 class="h6 mb-0 text-white title">Liste des posts</h1>
             </div>
-        </nav>
-        <main class="container col-md-6">
-            <div class="d-flex align-items-center  p-3 my-3 bg-primary bg-gradient text-white rounded shadow-sm">
-                <div>
-                    <h1 class="h6 mb-0 text-white">Liste des posts</h1>
-                </div>
+            <div class="p-4 m-2">
+                <a href="/#/signout"><button class="btn btn-danger">Se déconnecter</button></a>
             </div>
-            <div class="d-flex align-items-center flex-column bg-body p-6 my-6 rounded shadown-sm" id="post_list">
+            <hr />
+            <div class="d-flex align-items-center flex-column p-6 my-6 rounded shadown-sm" id="post_list">
 
             </div>
         </main>
         <script type="text/javascript" src="/assets/scripts/post/list.js"></script>
     </div>
-    <div id="admin_post_list">
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary text-white p-2">
-            <div class="container-fluid">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="navbar-item"><a class="nav-link active text-white" href="/#/">Home</a></li>
-                    <li class="navbar-item"><a class="nav-link active text-white" href="/#/post/create">Créer un poste</a></li>
-                    <li class="navbar-item"><a id="deco" class="nav-link active text-white" href="/#/signout">Se déconnecter</a></li>
-                </ul>
+    <div id="admin_post_list" class="bg-secondary bg-bg w-100 h-100-vh d-flex-justify-content-center">
+        <main class="container w-50">
+            <div class="p-4">
+                <h1 class="h6 mb-0 text-white title">Liste des posts</h1>
             </div>
-        </nav>
-        <main class="container col-md-6">
-            <div class="d-flex align-items-center  p-3 my-3 bg-primary bg-gradient text-white rounded shadow-sm">
-                <div>
-                    <h1 class="h6 mb-0 text-white">Liste des posts</h1>
+            <div class="p-4 m-2">
+                <div class="btn-group">
+                    <a href="/#/post/create" class="btn btn-success">Créer un poste</a>
+                    <a href="/#/signout" class="btn btn-danger">Se déconnecter</a>
                 </div>
             </div>
-            <div class="d-flex align-items-center flex-column bg-body p-6 my-6 rounded shadown-sm" id="post_list">
+            <hr />
+            <div class="d-flex align-items-center flex-column p-6 my-6 rounded shadown-sm" id="post_list">
 
             </div>
         </main>

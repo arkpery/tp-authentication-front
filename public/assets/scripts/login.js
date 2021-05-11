@@ -4,7 +4,7 @@ function start() {
         var token = window.localStorage.getItem("token");
 
         if (token && token.length){
-            window.location = "/post";
+            window.location = "/#/post";
         }
     }
 

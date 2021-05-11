@@ -11,11 +11,17 @@ function start() {
     $("#register form #register").on("click", function (event) {
         var email = $("#register form input#email").val();
         var password = $("#register form input#password").val();
+        var confirmation = $("#register form input#confirmation").val();
         var user = {
             email: email,
             password: password
         };
 
+        $("#register .error-message").text("");
+        if (confirmation !== password){
+            $("#register .error-message").text("Les mots de passe ne correspondent pas !");
+            return;
+        }
         $.ajax({
             contentType: "application/json;charset=utf-8",
             method: "POST",
@@ -34,6 +40,7 @@ function start() {
 
                                 $("#register form input#email").val("");
                                 $("#register form input#password").val("");
+                                $("#register form input#confirmation").val("");
                                 window.localStorage.setItem("token", token);
                                 window.location = "/#/post";
                             }
