@@ -36,7 +36,7 @@ function invokeModal(message){
     el.addClass("d-flex").addClass("justify-content-center");
     container.addClass("d-none");
     container.css("position", "absolute");
-    container.css("bottom", "0%");
+    container.css("bottom", "-100%");
     container.css("z-index", "100");
     container
         .addClass("d-flex")
