@@ -60,4 +60,4 @@ function start() {
     });
 }
 
-$(window).on("created_home", start);
+$(window).on("load", start);

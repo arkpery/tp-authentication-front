@@ -41,4 +41,4 @@ function start(event) {
     });
 }
 
-$(window).on("created_admin_post_list", start);
+$(window).on("load", start);

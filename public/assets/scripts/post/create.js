@@ -33,4 +33,4 @@ function start() {
 
 }
 
-$(window).on("created_create_post", start);
+$(window).on("load", start);

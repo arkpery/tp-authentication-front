@@ -2,4 +2,4 @@ function start() {
 
 }
 
-$(window).on("created_not_found", start);
+$(window).on("load", start);

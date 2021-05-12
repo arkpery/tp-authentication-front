@@ -4,7 +4,7 @@ function start() {
         var token = window.localStorage.getItem("token");
 
         if (token && token.length){
-            window.location = "/#/post";
+            window.location = "/post/list.html";
         }
     }
 
@@ -41,10 +41,10 @@ function start() {
                                 $("#connect form #email").val("");
                                 $("#connect form #password").val("");
                                 if (role === "USER"){
-                                    window.location = "/#/post";
+                                    window.location = "/post/list.html";
                                 }
                                 else if (role === "ADMIN"){
-                                    window.location = "/#/admin/post";
+                                    window.location = "/post/admin_list.html";
                                 }
                             }
                         },
@@ -67,4 +67,4 @@ function start() {
     redirectOnConnect();
 }
 
-$(window).on("created_connect", start);
+$(window).on("load", start);
