@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>TP Authentication</title>
+</head>
+<style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    .bg-apply-white {
+        background-color: white !important;
+    }
+
+    .bg-bg {
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%) !important;
+    }
+
+    .btn-entry {
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(96, 9, 121, 1) 35%, rgba(255, 0, 191, 1) 100%) !important;
+        border: none;
+    }
+
+    .title {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 4em;
+    }
+
+    .h-100-vh {
+        height: 100vh !important;
+        overflow: auto;
+    }
+
+    .error-message {
+        color:red;
+    }
+</style>
+
+<body>
+    <div id="register" class="bg-secondary bg-bg d-flex align-items-center justify-content-center h-100-vh">
+        <main class="container">
+            <div class="p-4 w-100">
+                <div class="container shadow bg-primary bg-apply-white w-50 p-4">
+                    <div class="mb-2">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <h1 class="h6 mb-0 "><a class="nav-link active" href="/register.html">Enregistrement</a>
+                                </h1>
+                            </li>
+                            <li class="nav-item">
+                                <h1 class="h6 mb-0"><a class="nav-link" href="/login.html">Connection</a></h1>
+                            </li>
+                        </ul>
+                    </div>
+                    <form>
+                        <div class="transition-element">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Adresse électronique</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="tata@toto.fr" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Mot de passe</label>
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="******" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Confirmation</label>
+                                <input type="password" class="form-control" id="confirmation" name="confirmation"
+                                    placeholder="******" />
+                            </div>
+                        </div>
+                        <div class="error-message">
+
+                        </div>
+                        <div class="input-group d-flex justify-content-center">
+                            <button id="register" class="btn btn-success rounded-pill w-50"
+                                type="button">Valider</button>
+                        </div>
+                        <p class="text-muted">Les administrateurs doivent s'enregistrer depuis le webservice POST
+                            /api/admin/register !</p>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <script type="text/javascript" src="/assets/scripts/modal.js"></script>
+        <script type="text/javascript" src="/assets/scripts/register.js"></script>
+    </div>
+
+</body>
+
+</html>
