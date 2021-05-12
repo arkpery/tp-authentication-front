@@ -48,7 +48,7 @@ function start() {
                         error: function (xhr, status, error) {
                             var message = xhr.responseJSON.message;
 
-                            alert(message);
+                            invokeModal(message);
                         }
                     });
                 }
@@ -56,7 +56,8 @@ function start() {
             error: function (xhr, status, error) {
                 var message = xhr.responseJSON.message;
 
-                alert(message);
+               //alert(message);
+               invokeModal(message);
             }
         });
     });

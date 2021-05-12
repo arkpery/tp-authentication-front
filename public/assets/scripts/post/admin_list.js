@@ -36,7 +36,7 @@ function start(event) {
         error: function (xhr, status, error) {
             var message = xhr.responseJSON.message;
 
-            alert(message);
+            invokeModal(message);
         }
     });
 }
