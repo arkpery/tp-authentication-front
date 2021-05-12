@@ -142,7 +142,7 @@ function start() {
             error: function (xhr, status, error) {
                 var message = xhr.responseJSON.message;
 
-                alert(message);
+                invokeModal(message);
             }
         });
     } else {
