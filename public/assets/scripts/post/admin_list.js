@@ -1,7 +1,7 @@
 function start(event) {
     console.log(event);
     var token = window.localStorage.getItem("token");
-    $("main #post_list *").remove();
+    $("main #post_list table tbody *").remove();
     $.ajax({
         method: "GET",
         dataType: "json",
@@ -13,15 +13,13 @@ function start(event) {
             console.log(xhr);
             if (xhr.status === 200) {
                 var tab = data;
-                var template = '<div class="card panel shadow w-100 h-100 mb-4">\
-                                    <h2 class="card-header panel-header bg-header-custom w-100"  id="headingOne" >\
-                                        ((title))\
-                                    </h2>\
-                                    <div id="collapseOne" class="card-body w-100">\
-                                        <p class="card-text">((content))</p>\
-                                        <p class="card-text"><small class="text-muted">((created_at))</small></p>\
-                                    </div>\
-                                </div>';
+                
+                var template = '<tr>\
+                                    <td>((title))</td>\
+                                    <td>((content))</td>\
+                                    <td>((created_at))</td>\
+                                    <td><button class="btn btn-danger">Supprimer</button>\
+                                </tr>';
 
                 for (var i = 0; i < tab.length; i++){
                     var item = tab[i];
@@ -29,8 +27,9 @@ function start(event) {
 
                     str = str.replace("((content))", item.content);
                     str = str.replace("((created_at))", item.created_at);
-                    $("main #post_list").append($(str));
+                    $("main #post_list table tbody").append($(str));
                 }
+                
             }
         },
         error: function (xhr, status, error) {
