@@ -13,8 +13,8 @@ function start(event) {
             console.log(xhr);
             if (xhr.status === 200) {
                 var tab = data;
-                var template = '<div class="card w-100 mb-4">\
-                                    <h2 class="card-header w-100"  id="headingOne" >\
+                var template = '<div class="card panel shadow w-100 mb-4">\
+                                    <h2 class="card-header panel-header bg-header-custom w-100"  id="headingOne" >\
                                         ((title))\
                                     </h2>\
                                     <div id="collapseOne" class="card-body w-100">\
